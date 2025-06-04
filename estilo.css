@@ -80,15 +80,13 @@ form input:last-child {
   color: white;
   cursor: pointer;
 }
-
 .animation {
   position: relative;
   width: 100%;
-  height: 200px; /* Adjust height as needed */
-  margin-right: 1em;
-  object-fit: cover;
+  height: 200px; /* Ou qualquer altura que você tinha */
+  /* display: block; ou flex, etc. - esta linha será sobrescrita ou você pode removê-la */
+  display: none !important; /* Adicione ou modifique para isto */
 }
-
 .animation img {
   position: absolute;
   max-width: 50px; /* Adjust emoji size for mobile */
