@@ -159,14 +159,15 @@ h1 strong:hover::after {
   color: #888;
 }
 
-.download-icon {
+/* Alterado de .download-icon para .search-icon */
+.search-icon {
   position: absolute;
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--dark);
   font-size: 1.4rem;
-  cursor: default; /* Alterado para default, pois não terá ação de click com JS */
+  cursor: pointer; /* Pode ser 'default' se for apenas visual */
   transition: all 0.3s ease;
   padding: 8px;
   background: var(--primary);
@@ -179,24 +180,20 @@ h1 strong:hover::after {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.download-icon:hover {
-  background: var(
-    --primary
-  ); /* Mantém a cor primária, pois não há ação de hover para download */
-  transform: translateY(-50%); /* Remove a escala no hover, pois não há ação */
-  color: var(--dark);
+.search-icon:hover {
+  background: var(--primary-dark);
+  transform: translateY(-50%) scale(1.05);
+  color: var(--white);
 }
 
 .emoji-section {
   width: 100%;
   padding: 0 10px 20px; /* Add some padding at the bottom for spacing */
   margin-bottom: 30px; /* Add margin to separate emoji sections and search bars */
-  /* border-bottom: 1px solid #eee; */ /* Optional: Add a separator line, uncomment if desired */
 }
 
 .emoji-section:last-of-type {
-  /* Use :last-of-type to target the last emoji section correctly */
-  border-bottom: none; /* Remove the separator for the last emoji section */
+  border-bottom: none;
   margin-bottom: 0;
 }
 
@@ -226,28 +223,8 @@ h1 strong:hover::after {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
-  position: relative;
+  position: relative; /* Essencial para posicionar o ícone de download */
   overflow: hidden;
-}
-
-.emoji-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.emoji-item:hover::before {
-  content: "Clique para baixar";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--accent);
-  color: white;
-  font-size: 0.7rem;
-  text-align: center;
-  padding: 5px;
-  opacity: 0.9;
-  z-index: 1; /* Ensure text is above image */
 }
 
 .emoji-item img {
@@ -255,10 +232,49 @@ h1 strong:hover::after {
   max-height: 70%;
   display: block;
   transition: transform 0.3s ease;
+  z-index: 1; /* Garante que a imagem esteja acima do ícone quando não hover */
 }
 
 .emoji-item:hover img {
   transform: scale(1.15);
+}
+
+/* Novo estilo para o ícone de download dentro do emoji-item */
+.emoji-download-icon {
+  position: absolute;
+  bottom: 10px; /* Posição na parte inferior */
+  right: 10px; /* Posição na parte direita */
+  font-size: 1.2rem;
+  color: var(--dark); /* Cor inicial do ícone */
+  background: var(--primary);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Começa invisível */
+  transform: translateY(10px); /* Começa um pouco abaixo */
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease,
+    color 0.3s ease;
+  z-index: 2; /* Garante que o ícone esteja acima da imagem */
+  pointer-events: auto; /* Garante que o ícone seja clicável */
+}
+
+.emoji-item:hover .emoji-download-icon {
+  opacity: 1; /* Fica visível no hover do item */
+  transform: translateY(0); /* Desliza para a posição */
+  cursor: pointer;
+}
+
+.emoji-download-icon:hover {
+  background: var(--accent); /* Cor no hover do ícone */
+  color: var(--white);
+}
+
+/* Remove o pseudo-elemento ":before" que exibia "Clique para baixar" */
+.emoji-item::before {
+  content: none;
 }
 
 .animation {
