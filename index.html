@@ -16,41 +16,56 @@
 </head>
 
 <body>
+
     <div id="wrapper">
         <header>
-            <img src="Imagens/logo.svg" alt="Kenoji">
+            <img src="Imagens/logo.svg" alt="Kenoji" />
         </header>
         <main>
             <section>
                 <h1>A sua biblioteca de Emojis, <strong>grátis</strong> e para <strong>sempre</strong></h1>
-
-                <p>É só buscar e depois fazer o download. <br>
-                    <span class="upper">Experimente</span>
-                </p>
-                <form action="">
-                    <input type="text" placeholder="Ex: Smile">
-                    <input type="submit" value="Buscar">
+                <p>é só buscar e depois fazer o download. <br /><span class="upper">EXPERIMENTE</span></p>
+                <form action="#" method="get" id="searchForm">
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="Ex: Smile" name="searchQuery" id="searchInput" />
+                        <i class="fas fa-download download-icon"></i>
+                        </a>
+                    </div>
                 </form>
             </section>
-            <div class="animation">
-                <a href="Imagens/emoji-1.svg" download="emoji-1.svg">
-                    <img src="Imagens/emoji-1.svg" alt="Emoji 1">
+
+            <div id="searchResults" class="emoji-grid">
+                <a href="Imagens/emoji-1.svg" download="emoji-1.svg" class="emoji-item">
+                    <img src="Imagens/emoji-1.svg" alt="Emoji 1" />
                 </a>
-                <a href="Imagens/emoji-2.svg" download="emoji-2.svg">
-                    <img src="Imagens/emoji-2.svg" alt="Emoji 2">
+                <a href="Imagens/emoji-2.svg" download="emoji-2.svg" class="emoji-item">
+                    <img src="Imagens/emoji-2.svg" alt="Emoji 2" />
                 </a>
-                <a href="Imagens/emoji-3.svg" download="emoji-3.svg">
-                    <img src="Imagens/emoji-3.svg" alt="Emoji 3">
+                <a href="Imagens/emoji-3.svg" download="emoji-3.svg" class="emoji-item">
+                    <img src="Imagens/emoji-3.svg" alt="Emoji 3" />
                 </a>
-                <a href="Imagens/emoji-4.svg" download="emoji-4.svg">
-                    <img src="Imagens/emoji-4.svg" alt="Emoji 4">
+                <a href="Imagens/emoji-4.svg" download="emoji-4.svg" class="emoji-item">
+                    <img src="Imagens/emoji-4.svg" alt="Emoji 4" />
                 </a>
-                <a href="Imagens/emoji-5.svg" download="emoji-5.svg">
-                    <img src="Imagens/emoji-5.svg" alt="Emoji 5">
+                <a href="Imagens/emoji-5.svg" download="emoji-5.svg" class="emoji-item">
+                    <img src="Imagens/emoji-5.svg" alt="Emoji 5" />
+                </a>
+                <a href="Imagens/emoji-6.svg" download="emoji-6.svg" class="emoji-item">
+                    <img src="Imagens/emoji-6.svg" alt="Emoji 6" />
                 </a>
             </div>
+
+            <div class="animation">
+                <a href="Imagens/emoji-1.svg" download><img src="Imagens/emoji-1.svg" alt="Emoji 1" /></a>
+                <a href="Imagens/emoji-2.svg" download><img src="Imagens/emoji-2.svg" alt="Emoji 2" /></a>
+                <a href="Imagens/emoji-3.svg" download><img src="Imagens/emoji-3.svg" alt="Emoji 3" /></a>
+                <a href="Imagens/emoji-4.svg" download><img src="Imagens/emoji-4.svg" alt="Emoji 4" /></a>
+                <a href="Imagens/emoji-5.svg" download><img src="Imagens/emoji-5.svg" alt="Emoji 5" /></a>
+                <a href="Imagens/emoji-6.svg" download><img src="Imagens/emoji-6.svg" alt="Emoji 6" /></a>
+            </div>
+
             <ul>
-                <li class="brands"> <i class="fa-brands fa-whatsapp"></i> Whatsapp</li>
+                <li class="brands"><i class="fa-brands fa-whatsapp"></i> Whatsapp</li>
                 <li class="brands"><i class="fa-brands fa-instagram"></i> Instagram</li>
                 <li class="brands"><i class="fa-brands fa-facebook"></i> Facebook</li>
             </ul>
