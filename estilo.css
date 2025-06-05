@@ -166,7 +166,7 @@ h1 strong:hover::after {
   transform: translateY(-50%);
   color: var(--dark);
   font-size: 1.4rem;
-  cursor: pointer;
+  cursor: default; /* Alterado para default, pois não terá ação de click com JS */
   transition: all 0.3s ease;
   padding: 8px;
   background: var(--primary);
@@ -180,9 +180,11 @@ h1 strong:hover::after {
 }
 
 .download-icon:hover {
-  background: var(--primary-dark);
-  transform: translateY(-50%) scale(1.05);
-  color: var(--white);
+  background: var(
+    --primary
+  ); /* Mantém a cor primária, pois não há ação de hover para download */
+  transform: translateY(-50%); /* Remove a escala no hover, pois não há ação */
+  color: var(--dark);
 }
 
 .emoji-section {
