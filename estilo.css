@@ -49,7 +49,7 @@ header img {
 main {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Adjust gap as needed */
+  gap: 30px;
   padding: 20px 0;
   align-items: center;
   justify-content: center;
@@ -115,7 +115,7 @@ h1 strong:hover::after {
   flex-direction: column;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto 30px; /* Add margin-bottom to separate from next section */
+  margin: 0 auto 30px;
 }
 
 .search-content {
@@ -159,7 +159,6 @@ h1 strong:hover::after {
   color: #888;
 }
 
-/* Alterado de .download-icon para .search-icon */
 .search-icon {
   position: absolute;
   right: 15px;
@@ -167,7 +166,7 @@ h1 strong:hover::after {
   transform: translateY(-50%);
   color: var(--dark);
   font-size: 1.4rem;
-  cursor: pointer; /* Pode ser 'default' se for apenas visual */
+  cursor: pointer;
   transition: all 0.3s ease;
   padding: 8px;
   background: var(--primary);
@@ -188,8 +187,8 @@ h1 strong:hover::after {
 
 .emoji-section {
   width: 100%;
-  padding: 0 10px 20px; /* Add some padding at the bottom for spacing */
-  margin-bottom: 30px; /* Add margin to separate emoji sections and search bars */
+  padding: 0 10px 20px;
+  margin-bottom: 30px;
 }
 
 .emoji-section:last-of-type {
@@ -213,17 +212,17 @@ h1 strong:hover::after {
 }
 
 .emoji-item {
-  display: flex; /* Changed to flex to easily center image */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  width: 140px; /* Fixed width */
-  height: 140px; /* Fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
   border-radius: 12px;
   background: var(--white);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
-  position: relative; /* Essencial para posicionar o ícone de download */
+  position: relative;
   overflow: hidden;
 }
 
@@ -232,20 +231,19 @@ h1 strong:hover::after {
   max-height: 70%;
   display: block;
   transition: transform 0.3s ease;
-  z-index: 1; /* Garante que a imagem esteja acima do ícone quando não hover */
+  z-index: 1;
 }
 
 .emoji-item:hover img {
   transform: scale(1.15);
 }
 
-/* Novo estilo para o ícone de download dentro do emoji-item */
 .emoji-download-icon {
   position: absolute;
-  bottom: 10px; /* Posição na parte inferior */
-  right: 10px; /* Posição na parte direita */
+  bottom: 10px;
+  right: 10px;
   font-size: 1.2rem;
-  color: var(--dark); /* Cor inicial do ícone */
+  color: var(--dark);
   background: var(--primary);
   border-radius: 50%;
   width: 30px;
@@ -253,26 +251,25 @@ h1 strong:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0; /* Começa invisível */
-  transform: translateY(10px); /* Começa um pouco abaixo */
+  opacity: 0;
+  transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease,
     color 0.3s ease;
-  z-index: 2; /* Garante que o ícone esteja acima da imagem */
-  pointer-events: auto; /* Garante que o ícone seja clicável */
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .emoji-item:hover .emoji-download-icon {
-  opacity: 1; /* Fica visível no hover do item */
-  transform: translateY(0); /* Desliza para a posição */
+  opacity: 1;
+  transform: translateY(0);
   cursor: pointer;
 }
 
 .emoji-download-icon:hover {
-  background: var(--accent); /* Cor no hover do ícone */
+  background: var(--accent);
   color: var(--white);
 }
 
-/* Remove o pseudo-elemento ":before" que exibia "Clique para baixar" */
 .emoji-item::before {
   content: none;
 }
@@ -281,7 +278,9 @@ h1 strong:hover::after {
   position: relative;
   width: 100%;
   height: 200px;
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: (3, 1fr);
   margin: 30px 0;
 }
 
@@ -420,32 +419,34 @@ footer {
   }
 
   .emoji-item {
-    width: 140px; /* Maintain fixed width */
-    height: 140px; /* Maintain fixed height */
+    width: 140px;
+    height: 140px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .search-content {
-    flex-direction: column; /* Changed to column to stack search bar */
-    align-items: center; /* Center search bar */
-    gap: 30px; /* Adjust gap as needed */
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 
   .search-form {
-    flex: unset; /* Remove flex sizing */
+    flex: unset;
     max-width: 500px;
   }
 
   .emoji-section {
-    flex: unset; /* Remove flex sizing */
+    flex: unset;
   }
 
   .emoji-grid {
-    margin-top: 10px; /* Reset margin */
+    margin-top: 10px;
     padding: 25px;
-    grid-template-columns: repeat(2, 1fr); /* Force 2 columns for emojis */
-    max-width: fit-content; /* Adjust max-width to fit 2 emojis */
+    /* MODIFIED FOR 3 COLUMNS ON LARGE SCREENS */
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none; /* Adjusts to fit 3 columns */
+    display: grid;
   }
 
   .brands-grid {
