@@ -191,11 +191,6 @@ h1 strong:hover::after {
   margin-bottom: 30px;
 }
 
-.emoji-section:last-of-type {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
 .emoji-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -208,6 +203,8 @@ h1 strong:hover::after {
   margin-top: 10px;
   width: 100%;
   max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   transition: all 0.3s ease;
 }
 
@@ -443,10 +440,8 @@ footer {
   .emoji-grid {
     margin-top: 10px;
     padding: 25px;
-    /* MODIFIED FOR 3 COLUMNS ON LARGE SCREENS */
-    grid-template-columns: repeat(3, 1fr);
-    max-width: none; /* Adjusts to fit 3 columns */
-    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    max-width: 1000px;
   }
 
   .brands-grid {
